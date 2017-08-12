@@ -1,3 +1,4 @@
+
 var sunTapped_global = 0;
 var timer_global;
 
@@ -64,18 +65,18 @@ function writeTap() {
 $("#okBtn").on("click touchstart", function(){
     $("#form1div").hide();
     $(".modal-title").text("Share this link with your loved one!");
-    $('label[for="hers"]').text("");
-    var hers_val = $("#hers").val();
-    var hers_i = greek.indexOf(hers_val.toLowerCase());
-    var hers_char = (hers_i == -1) ? hers_val : hers_i;
+    $('label[for="her"]').text("");
+    var her_val = $("#her").val();
+    var her_i = greek.indexOf(her_val.toLowerCase());
+    var her_char = (her_i == -1) ? her_val : her_i;
     var his_val = $("#his").val();
     var his_i = greek.indexOf(his_val.toLowerCase());
     var his_char = ( his_i == -1 ) ? his_val : his_i;
-    $("#hers").attr('maxlength', '70');
-    $("#hers").val(function () {return "http://cgi.di.uoa.gr/~grad1459/summer_love/index.html?" + hers_char + "=" + his_char;})
-    document.getElementById('hers').readOnly = true;
-    document.getElementById('hers').disabled = true;
-    document.getElementById('hers').style.cursor = "copy";
+    $("#her").attr('maxlength', '70');
+    $("#her").val(function () {return "http://cgi.di.uoa.gr/~grad1459/summer_love/index.html?" + her_char + "="$
+    document.getElementById('her').readOnly = true;
+    document.getElementById('her').disabled = true;
+    document.getElementById('her').style.cursor = "copy";
     $("#copyBtn").removeClass("hide");
     $(this).hide();
 });
@@ -95,7 +96,7 @@ $(document).ready(function(){
         }
     });
 
-    $('#hers').bind('keyup blur',function(){
+    $('#her').bind('keyup blur',function(){
       var node = $(this);
       node.val(node.val().replace(/[^A-ZA-zΑ-Ωα-ωίϊΐόάέύϋΰήώ]/g,'') ); }
     );
@@ -104,7 +105,7 @@ $(document).ready(function(){
       node.val(node.val().replace(/[^A-ZA-zΑ-Ωα-ωίϊΐόάέύϋΰήώ]/g,'') ); }
     );
 });
-
+  
 function copyToClipboard(element) {
     var $temp = $("<input>");
     $("body").append($temp);
@@ -115,4 +116,3 @@ function copyToClipboard(element) {
     $("#copiedNotification").removeClass("hide");
     setTimeout(function() { $("#copiedNotification").fadeOut(1000); }, 5000);
 }
-
