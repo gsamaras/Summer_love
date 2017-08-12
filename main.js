@@ -71,6 +71,7 @@ $("#okBtn").on("click touchstart", function(){
     var his_val = $("#his").val();
     var his_i = greek.indexOf(his_val.toLowerCase());
     var his_char = ( his_i == -1 ) ? his_val : his_i;
+    $("#hers").attr('maxlength', '70');
     $("#hers").val(function () {return "http://cgi.di.uoa.gr/~grad1459/summer_love/index.html?" + hers_char + "=" + his_char;})
     document.getElementById('hers').readOnly = true;
     document.getElementById('hers').disabled = true;
